@@ -1,0 +1,53 @@
+#include <cstdio>
+#include <cassert>
+const int Nchars = 1000;
+
+/**
+    \brief StrPrint
+    \author andreevmaxi
+	\version 1.0
+	\date september 2019 year
+	\copyright korobcom
+    
+    \f$ x_1 &=& \frac{-b-\sqrt{b*b-4*a*c}}{2a} \f$ and \f$ x_2 &=& \frac{-b+\sqrt{b*b-4*a*c}}{2a} \f$
+    \return {Also it return char values '1','2','0' and 'i', where is:
+    '1' - means that this equation have only one root and it is in x1 variable.
+    '2' - means that this equation have two roots in x1 and x2 variable respectively.
+    '0' - means that this equation don't have any roots!
+    'i' - means that this equation have infinite number of roots.}
+    \param[in] a it's integer variable of head member(coefficient) of equation
+    \param[in] b it's integer variable of second member(coefficient) of equation
+    \param[in] c it's integer variable of free member(coefficient) of equation
+    \param[out] x1 it's double variable which contains first root of input equation
+    \param[out] x2 it's double variable which contains second root of input equation
+*/
+
+bool StrPrint(char* str);
+
+int main()
+{
+    char String[Nchars] = {};
+    int counter = 0;
+
+    String[counter] = getchar();
+    while(String[counter] != '\n')
+    {
+        ++counter;
+        String[counter] = getchar();
+    }
+
+    StrPrint(String);
+    return 0;
+}
+
+bool StrPrint(char* str){
+    assert(str != NULL);
+
+    int i = 0;
+    while ( (i < Nchars) && (str[i] != '\0') )
+    {
+        printf("%c", str[i]);
+        ++i;
+    }
+    return 1;
+}
